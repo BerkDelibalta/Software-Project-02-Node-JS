@@ -71,22 +71,3 @@ module.exports = {
 }
 
 
-/*
-const updateUser = async (req, res) => {
-    const { name, email } = req.body;
-
-    if (!name || !email) {
-        throw new errors.BadRequestError('Enter both credentials');
-    }
-
-    const user = await User.findOneAndUpdate(
-        { _id: req.user.userId },
-        { email, name },
-        { new: true, runValidators: true });
-
-    const tokenUser = createTokenUser(user);
-    attachCookiesToResponse({ res, user: tokenUser });
-
-    res.status(http.StatusCodes.OK).json({ message: 'User updated' });
-}
-*/
