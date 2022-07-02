@@ -3,7 +3,7 @@ const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
 
 const createProduct = async (req, res) => {
-    req.body.user = req.user.userId;
+    req.body.user = req.body.userId;
     const product = await Product.create(req.body)
     res.status(StatusCodes.CREATED).json({ product })
 };

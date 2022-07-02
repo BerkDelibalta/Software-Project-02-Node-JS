@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^3.2.3",
+    "async": "^3.2.2",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cookieparser": "^0.1.0",
@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "express-fileupload": "^1.2.1",
-    "express-mongo-sanitize": "^2.1.0",
+    "express-mongo-sanitize": "^2.2.0",
     "express-rate-limit": "^5.4.1",
     "express-upload": "^0.1.0",
     "helmet": "^4.6.0",

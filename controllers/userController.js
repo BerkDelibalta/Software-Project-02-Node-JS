@@ -12,7 +12,7 @@ const getAllUsers = async (req, res) => {
 const getSingleUser = async (req, res) => {
     const user = await User.findOne({ _id: req.params.id, role: 'user' }).select('-password');
     if (!user) throw new errors.NotFoundError('User not found');
-    checkPermissions(req.user, req.user._id);
+    checkPermissions(req, user.userId);
     res.status(http.StatusCodes.OK).json({ user });
 }
 const showCurrentUser = async (req, res) => {

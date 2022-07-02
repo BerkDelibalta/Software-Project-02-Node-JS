@@ -1,23 +1,23 @@
 const CustomError = require('../errors');
 const { isTokenValid } = require('../utils/index');
 
-const authenticateUser = async (req, res, next) => {
+const authenticateUser = async (err, req, res, next) => {
     const token = req.signedCookies.token;
 
-
     if (!token) {
-        throw new CustomError.UnauthenticatedError('Authentication Invalid');
+        throw new CustomError.UnauthenticatedError('Authentication Invalid - no token provided');
     }
 
     try {
         const { name, userId, role } = isTokenValid({ token });
         req.user = { name, userId, role };
-        next();
+        next()
     } catch (error) {
-        throw new CustomError.UnauthenticatedError('Authentication Invalid');
+        throw new CustomError.UnauthenticatedError('Authentication Invalid - token is invalid');
     }
 
-    next();
+
+    next()
 };
 
 const authorizePermissions = (...roles) => {
